@@ -1,0 +1,32 @@
+ALGORITHM dot_product
+VAR
+ dot:INTEGER;
+  v1, v2:INTEGER;
+  i:INTEGER;
+BEGIN
+ dot:=0;
+ i:=0;
+ if (v1.length<>v2.length)then 
+ write("we cannot calculate dot_product");
+ dot :=NaN;
+ END_IF
+ WHILE (i <v1.length) DO
+ dot :=v1[i]*v2[i];
+ END_WHILE
+END
+ALGORITHM orth_vectors
+VAR
+ v1,v2 :INTEGER;
+ dot : INTEGER;
+BEGIN
+ n1 := read_size();
+ read_array(n1,v2);
+ n2 := read_size();
+ read_array(n2,v2);
+ dot_product(v1,v2,dot);
+ IF (dot =0)) THEN
+  write("v1 and v2 are orthogonal")
+  ELSE
+  write("v1 and v2 are not orthognal")
+ END_IF
+END
